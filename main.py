@@ -1,5 +1,5 @@
 import hashlib
-import time
+from timeit import default_timer as timer
 import tracemalloc
 
 
@@ -150,10 +150,47 @@ def sha_3_256(plaintext: bytes):
 
 
 if __name__ == '__main__':
-    word = b""
+    word = b"abcdefgh123hr4i3hdhlfajhjsfopgjmpse59mnvpe9tmnp9[mndpvnmit09rbnm09dmdp9rm,bep0["
+    print()
     print("custom sha-3:")
+    start = timer()
     print(sha_3_256(word))
+    end = timer()
+    print(f"{(end-start):f} seconds")
     print("default sha-3:")
+    start = timer()
     hash_lib = hashlib.sha3_256(word)
     print(hash_lib.hexdigest())
+    end = timer()
+    print(f"{(end-start):f} seconds")
+    word = b"ewyuhtqfdcgkejwnrqlikurbovl;ikuowi573908n5vm -3409-cv380=c -0458 ierm3954[8,m=-[rp irw [tpo8 509[r pw8i0e [tyo9g5i4]3-jfhy4yskg09d746rt"
+    print()
+    print("custom sha-3:")
+    start = timer()
+    print(sha_3_256(word))
+    end = timer()
+    print(f"{(end-start):f} seconds")
+    print("default sha-3:")
+    start = timer()
+    hash_lib = hashlib.sha3_256(word)
+    print(hash_lib.hexdigest())
+    end = timer()
+    print(f"{(end-start):f} seconds")
+    word = b"treu65tp0[roiukh'p5ter;/li [0pikjtme0por58i6kj[05p4or;lujm;olwse.,qujaxm;fler.jdfmt [';tpoiyk054[pr;fk ptolifkhgp54olerik g09rotg [powgo" \
+           b"eri5itrhiksujgmo;4tlfrijm;sgoi5rujf0wp84i09 5u0t[5porj[;pgluj;solfjtg095 4poir [tprfiy5-0[p9it-04rp9it g[9rowi jkt0po5r;l4eiktw[p4;olit[" \
+           b"rew6toiu45jrwosdcmglkyt,iuyk]509trpoeyi6[09-t 0954oiy o;hjtnliwrjyh587342ujt /o; y-[56 tip'ti 6opiyk65tlei o;etk 5poiy p;t 5oiluk 054;o " \
+           b"ire 54ortu o;54rw u5ir ;54krjtwoikliu45093op54i3w';edlg j85io4yk 0[3w'rs;foldk"
+    print()
+    print("custom sha-3:")
+    start = timer()
+    print(sha_3_256(word))
+    end = timer()
+    print(f"{(end - start):f} seconds")
+    print("default sha-3:")
+    start = timer()
+    hash_lib = hashlib.sha3_256(word)
+    print(hash_lib.hexdigest())
+    end = timer()
+    print(f"{(end-start):f} seconds")
+
 
